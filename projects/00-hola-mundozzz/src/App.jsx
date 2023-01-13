@@ -1,12 +1,13 @@
+import "./App.css";
+import { TwitterFollowCard } from "./TwitterFollowCard";
 export function App() {
-return (
-    <article>
-        <header>
-            <img src="https://unavatar.io/midudev" alt="El avatar de Midu" />
-            <div>
-                <strong>My midudev</strong>
-            </div>
-        </header>
-    </article>
-)
+    return (
+        <section className="App">
+            <TwitterFollowCard isFollowing userName="midudev" name="Miguel Angel Durum" />
+            <TwitterFollowCard isFollowing={false} userName="7hells" name="Usuario Anonimo" />
+            <TwitterFollowCard isFollowing userName="socdimecres" name="Netflix Actriz" />
+            <TwitterFollowCard isFollowing userName="dramaqueen" name="La Reinazzz" />
+            <TwitterFollowCard isFollowing={false} userName="posello" name="El del LOL" />
+        </section>
+    );
 }
