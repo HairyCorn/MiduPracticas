@@ -1,5 +1,6 @@
 import { preguntas, respuestas } from "./preguntas";
 import { useState, useEffect } from "react";
+import App2 from "./questions"
 export function App() {
     const [preguntaActual, setPreguntaActual] = useState(0);
     const [isFinished, setIsFinished] = useState(false);
@@ -28,21 +29,7 @@ export function App() {
     return (
         <main className="app">
             <div className="pregunta">
-                <div className="numero-pregunta">
-                    <span>Pregunta {preguntaActual + 1} de </span>{preguntas.length}
-                </div>
-                <div className="titulo-pregunta">
-                    {preguntas[preguntaActual].titulo}
-                </div>
-            </div>
-            <div className="respuesta">
-                {respuestas.map((respuesta) => (
-                    <button key={respuesta}
-                        onClick={(e) => handleAnswerSubmit(e)}
-                    >
-                        {respuesta}
-                    </button>
-                ))}
+                <App2></App2>
             </div>
         </main>
     );

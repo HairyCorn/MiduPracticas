@@ -2,15 +2,15 @@
 export const respuestas = ["Contestar", "Pasar"];
 export const preguntas = [
     {
-      titulo: "¿Cuál es el mejor lenguaje de programación?"
+      titulo: "¿?"
     },
     {
-      titulo: "Con Lasfito aprendes de tutoriales...?"
+      titulo: "?"
     },
     {
-      titulo: "¿Cuánto es `11`+ 1 en JavaScript?"
+      titulo: "¿?"
     },
     {
-      titulo: "¿En qué año fue creado JavaScript?"
+      titulo: "¿?"
     },
   ];
