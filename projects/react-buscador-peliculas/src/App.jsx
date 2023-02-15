@@ -29,21 +29,20 @@ function useSearch() {
     }
     setError(null)
   }, [search])
-  return {search, updateSearch, error}
+  return { search, updateSearch, error }
 }
 
 function App() {
-  const [count, setCount] = useState(0)
-  const { movies } = useMovies()
-  const {search, updateSearch, error} = useSearch()
+  const { search, updateSearch, error } = useSearch()
+  const { movies, loading, getMovies } = useMovies({ search })
 
 
-  const inputRef = useRef();
   const handleSubmit = (event) => {
     event.preventDefault()
-/*     const fields = Object.fromEntries(
-      new window.FormData(event.target)
-    ) */
+    getMovies()
+    /*     const fields = Object.fromEntries(
+          new window.FormData(event.target)
+        ) */
   }
   const handleChange = (event) => {
     updateSearch(event.target.value)
@@ -56,13 +55,17 @@ function App() {
       <header>
         <h1>Buscador de películas</h1>
         <form className='form' onSubmit={handleSubmit}>
-          <input onChange={handleChange} value={search} name='search' ref={inputRef} type="text" placeholder='Avengers, Star Wars, Matrix...' />
+          <input onChange={handleChange} value={search} name='search' type="text" placeholder='Avengers, Star Wars, Matrix...' />
           <button type="submit">Buscar</button>
         </form>
-        {error && <p style={{color: 'red'}}>{error}</p>}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </header>
       <main>
-        <Movies movies={movies} />
+        {
+          loading ? <p>Cargando....</p>
+            : <Movies movies={movies} />
+
+        }
       </main>
     </div>
   )

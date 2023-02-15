@@ -1,17 +1,41 @@
-.page{
+.page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-main{
+main {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+form {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-form{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.movies {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.movie {
+  text-align: center;
+  list-style: none;
+}
+
+.movie h3,
+.movie p {
+  padding: 0;
+}
+
+.movie img {
+  border-radius: 8px;
 }
